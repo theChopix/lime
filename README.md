@@ -6,7 +6,7 @@ LIME is concept of explaining single predictions of classification models based 
 
 Specific instance of LIME used in this implementation examines spam classification problem and uses Shapley and Banzhaf values as its weights (as game-theoretic concept).
 
-includes:
+Repository includes:
 
 * Naive Bayesian Classifier - thanks to its simplicity we can derive some inherent interpretability, which is shown in jupyter file
 
