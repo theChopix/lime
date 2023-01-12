@@ -6,6 +6,9 @@ import seaborn as sns
 
 
 class Explanation:
+    """
+    Class for interpretation and explanation visualizations
+    """
 
     def __init__(self, data, plot_title=None, x_label=None):
         # self.data = list(data.items())
@@ -15,12 +18,21 @@ class Explanation:
         self.x_label = x_label
 
     def text_plot(self):
+        """
+        Display interpretation/explanation as a simple table of words and their values
+        """
+
         df = pd.DataFrame(self.data, columns=["Features", "Values"])
         df.set_index("Features", inplace=True)
         return df
 
     def graph_plot(self, gradient=False):
-        # self.data.reverse()
+        """
+        Display interpretation/explanation as a barh graph of words and their values
+
+        :param gradient: gradient bar visualization flag, bool
+        :return plot: barh graph to plot
+        """
 
         dt = list(reversed(self.data))
         df = pd.DataFrame(dt, columns=["Features", "Values"])
