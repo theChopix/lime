@@ -6,7 +6,7 @@ def explain_instance_with_data(W, A, b):
     """
     Takes perturbed data, labels and distances, returns explanation
 
-    x_opt = (C.T * diag(W) * C)**(-1) * A.T * C * p
+    x_opt = (A.T * diag(W) * A)**(-1) * A.T * C * p
 
     :param: W - weights, np array (2^n, 1) {float}
     :param: A - coalition vectors, np array (2^n, n) {0,1}

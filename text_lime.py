@@ -47,7 +47,7 @@ class LimeTextExplainer(object):
         coalitions_num = len(coalition_vectors)
         classifications = np.array([-self.average_classif_value] * coalitions_num)
         for i in range(coalitions_num):
-            coalition_indices = np.array(list(map(bool, coalition_vectors[i])))
+            coalition_indices = np.array(list(map(bool, [not elem for elem in coalition_vectors[i]])))
             w_to_remove = self.words_to_remove[coalition_indices]
 
             (spam_prob, _), _ = self.classifier.test_instance(self.path_to_instance, words_to_remove=w_to_remove)
